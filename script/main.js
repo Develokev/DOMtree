@@ -1,23 +1,81 @@
 // DECLARACION DE CONSTANTES -- LLAMAR A LOS DIVS QUE HAREMOS DINÁMICOS DESDE JS
 
-const headerPic = document.getElementById('img_cambiante');
-console.log(headerPic);
+const headerPic = document.querySelector("#img_cambiante");
 
-const cardA = document.getElementById("card1");
-console.log(cardA);
+const cardA = document.querySelector("#card1");
 
-const cardB = document.getElementById("card2");
-console.log(cardB);
+const cardB = document.querySelector("#card2");
 
-const cardC = document.getElementById("card3");
-console.log(cardC);
+const cardC = document.querySelector("#card3");
 
-// CREACIÓN DE ARRAYs PARA LUEGO ALMACENAR EN LOS DIVS IDENTIFICADOS ARRIBA
+const urlCardBase = "../media_DOMtree/Viajes/";
 
-// const arrayBanner = ["../media_DOMtree/Banner/1.jpg", "../media_DOMtree/Banner/2.jpg", "../media_DOMtree/Banner/4.jpg", "../media_DOMtree/Banner/5.jpg", "../media_DOMtree/Banner/6.jpg", "../media_DOMtree/Banner/7.jpg", "../media_DOMtree/Banner/8.jpg"];
-const arrayCambiante = [src="../media_DOMtree/Banner/1.jpg", src="../media_DOMtree/Banner/2.jpg", src="../media_DOMtree/Banner/4.jpg"]
-// const arrayCambiante = [1, 2, 3, 4, 5]
-var random_photo = arrayCambiante[Math.random()*arrayCambiante.length]
-// var random_photo = arrayBanner[Math.random()*arrayBanner.length]
-console.log(random_photo);
 
+// CREACIÓN DE ARRAY BANNER PARA LUEGO ALMACENAR EN EL DIVS CORRESPONDIENTE ARRIBA
+
+const arrayBanner = [
+    "../media_DOMtree/Banner/1.jpg",
+    "../media_DOMtree/Banner/2.jpg",
+    "../media_DOMtree/Banner/4.jpg",
+    "../media_DOMtree/Banner/5.jpg",
+    "../media_DOMtree/Banner/6.jpg",
+    "../media_DOMtree/Banner/7.jpg",
+    "../media_DOMtree/Banner/8.jpg"];
+
+console.log(arrayBanner);
+
+// ARRAYs para img cambiante de Banner
+
+let img = document.createElement("img")
+
+var random_photo = [Math.floor(Math.random() * arrayBanner.length)];
+img.src = arrayBanner[random_photo]
+
+headerPic.appendChild(img);
+
+// ARRAYs para imgs de CARDS.
+
+const paintRecomended = () =>{
+
+    const arrayCards =[
+        ["viaje-1.jpg", "Viaje 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        ["viaje-2.jpg", "Viaje 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        ["viaje-3.jpg", "Viaje 3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+    ];
+    
+    arrayCards.forEach((item)=>{ 
+        // const card = document.createElement('ARTICLE'); 
+        //     card.classList.add('grid-item-2'); 
+        //     card.classList.add('border-top-right-bottom');
+        // const cardImg = document.createElement('IMG'); 
+        //     cardImg.src=`${urlBase}/viajes/${item[0]}`; 
+        //     cardImg.setAttribute('alt', item[1]); 
+        //     cardImg.title = item[1];
+        //     cardImg.classList.add('img-fluid'); 
+        // const cardT = document.createElement('H3'); 
+        //     cardT.textContent = item[1]; 
+        // const cardP = document.createElement('P'); 
+        //     cardP.textContent = item[2];
+        const card = document.querySelector("prueba1")
+    
+        card.append(arrayCards);
+    
+        fragment.append(card);
+    
+    })
+    
+    recomendados.append(fragment);
+    }
+
+// const paintDestiny = () => {
+
+// }
+
+// const pintarDestinos=()=>{
+// const destinos = document.querySelector('#prueba1');
+// const arrayCities = ['Bogotá', 'La Paz', 'Santiago de Chile', 'Caracas', 'Buenos Aires'];
+
+// }
+
+paintRecomemded();
+// paintDestiny();

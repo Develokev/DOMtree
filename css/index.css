@@ -64,3 +64,8 @@ h3 {
     padding: 10px;
     text-align: justify;
 }
+
+.img_cambiante {
+    width: 100%;
+    height: 100%;
+}
